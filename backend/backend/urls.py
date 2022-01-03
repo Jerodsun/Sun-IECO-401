@@ -29,5 +29,6 @@ schema_view = get_swagger_view(title='Election Models API')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('', include(router.urls)),
     path('swagger/', schema_view),
 ]

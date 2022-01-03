@@ -15,7 +15,7 @@ class VotingParametersView(viewsets.ModelViewSet):
     
     serializer_class = VotingParametersSerializer
     queryset = VotingParameters.objects.all()
-    http_method_names = ['get', 'post']
+    http_method_names = ['get', 'post'] # Release should block GET requests.
 
     def create(self, request):
         serializer = VotingParametersSerializer(data=request.data)
