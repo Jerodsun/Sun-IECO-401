@@ -14,8 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+from rest_framework import routers
+from electionapp import views
+
+from rest_framework_swagger.views import get_swagger_view
+
+router = routers.DefaultRouter()
+router.register(r'electionapp', views.VotingParametersView, 'electionapp')
+
+schema_view = get_swagger_view(title='Election Models API')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
+    path('swagger/', schema_view),
 ]
