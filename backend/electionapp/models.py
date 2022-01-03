@@ -14,10 +14,12 @@ class VotingParameters(models.Model):
 
     NORMAL = 'N'
     UNIFORM = 'U'
-
+    BIMODAL_NORMAL = 'BN'
+    
     VOTER_DISTRIBUTION_CHOICES = [
         (NORMAL, 'normal'),
         (UNIFORM, 'uniform'),
+        (BIMODAL_NORMAL, 'bimodal_normal')
     ]
 
     distribution_choice = models.CharField(

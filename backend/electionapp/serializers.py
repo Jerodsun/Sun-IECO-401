@@ -25,7 +25,7 @@ class VotingParametersSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Must have at least 1 voter of type")
             # update code so will not be a problem in the future
 
-        if data['distribution_choice'] not in ["normal", "uniform"]:
+        if data['distribution_choice'] not in ["normal", "uniform", "bimodal_normal"]:
             raise serializers.ValidationError("Invalid Distribution Choice")
 
         return data
