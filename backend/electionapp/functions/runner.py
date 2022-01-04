@@ -1,6 +1,6 @@
 # if there is a tie, then there is no score, move on to next round - track ties
 
-from .participants import Candidate, GreedyVoter, CenterInformedVoter, PrimaryOptimizingVoter
+from participants import Candidate, GreedyVoter, CenterInformedVoter, PrimaryOptimizingVoter
 import math
 import random
 import numpy as np
